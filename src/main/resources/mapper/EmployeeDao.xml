@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.EmployeeDao">
+    <resultMap id="employeeMap" type="Employee">
+        <id column="id" property="id"></id>
+        <result column="BASE_INFO_ID" property="baseInfoId"></result>
+        <result column="DEPARTMENT_ID" property="departmentId"></result>
+        <result column="EMPLOYEE_NAME" property="employeeName"></result>
+        <result column="EMPLOYEE_PASSWORD" property="employeePassword"></result>
+        <result column="EMPLOYEE_FORM" property="employeeForm"></result>
+        <result column="EMPLOYEE_STATUS" property="employeeStatus"></result>
+        <result column="HIRE_TIME" property="hireTime"></result>
+        <result column="EMPLOYEE_PHONE" property="employeePhone"></result>
+        <result column="EMPLOYEE_EMAIL" property="employeeEmail"></result>
+        <result column="EMPLOYEE_CREATE_TIME" property="employeeCreateTime"></result>
+        <result column="EMPLOYEE_MODIFIED_TIME" property="employeeModifiedTime"></result>
+    </resultMap>
+    <insert id="addEmployee" parameterType="Employee">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.EMPLOYEE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="baseInfoId!=null">BASE_INFO_ID,</if>
+            <if test="departmentId!=null">DEPARTMENT_ID,</if>
+            <if test="employeeName!=null">EMPLOYEE_NAME,</if>
+            <if test="employeePassword!=null">EMPLOYEE_PASSWORD,</if>
+            <if test="employeeForm!=null">EMPLOYEE_FORM,</if>
+            <if test="employeeStatus!=null">EMPLOYEE_STATUS,</if>
+            <if test="hireTime!=null">HIRE_TIME,</if>
+            <if test="employeePhone!=null">EMPLOYEE_PHONE,</if>
+            <if test="employeeEmail!=null">EMPLOYEE_EMAIL,</if>
+            <if test="employeeCreateTime!=null">EMPLOYEE_CREATE_TIME,</if>
+            <if test="employeeModifiedTime!=null">EMPLOYEE_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="baseInfoId!=null">#{baseInfoId},</if>
+            <if test="departmentId!=null">#{departmentId},</if>
+            <if test="employeeName!=null">#{employeeName},</if>
+            <if test="employeePassword!=null">#{employeePassword},</if>
+            <if test="employeeForm!=null">#{employeeForm},</if>
+            <if test="employeeStatus!=null">#{employeeStatus},</if>
+            <if test="hireTime!=null">#{hireTime},</if>
+            <if test="employeePhone!=null">#{employeePhone},</if>
+            <if test="employeeEmail!=null">#{employeeEmail},</if>
+            <if test="employeeCreateTime!=null">#{employeeCreateTime},</if>
+            <if test="employeeModifiedTime!=null">#{employeeModifiedTime}</if>
+        </trim>
+    </insert>
+
+    <update id="updateEmployeeNameAndPassowrd" >
+        UPDATE EMPLOYEE SET EMPLOYEE_NAME=#{name},EMPLOYEE_PASSWORD=#{password} WHERE ID=#{eid}
+    </update>
+
+    <select id="queryEmployeeByTimeSort" resultMap="employeeMap">
+        select * from
+        (select EMPLOYEE.*,row_number() over (order by HIRE_TIME desc) rn from EMPLOYEE)
+        where rn&lt;=5;
+    </select>
+
+    <select id="employeeLogin" parameterType="Employee" resultMap="employeeMap">
+        SELECT * FROM EMPLOYEE WHERE EMPLOYEE_NAME=#{employeeName} AND EMPLOYEE_PASSWORD=#{employeePassword}
+    </select>
+
+    <update id="updateNameAndPasswordByEmployee" parameterType="Employee">
+        UPDATE EMPLOYEE SET EMPLOYEE_NAME=#{employeeName},EMPLOYEE_PASSWORD=#{employeePassword} WHERE ID=#{id}
+    </update>
+
+</mapper>

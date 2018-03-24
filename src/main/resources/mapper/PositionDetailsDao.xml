@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.PositionDetailsDao">
+    <resultMap id="positionDetailsMap" type="PositionDetails">
+        <id column="id" property="id"></id>
+        <result column="DEPARTMENT_ID" property="departmentId"></result>
+        <result column="POSITION_TYPE_ID" property="positionTypeId"></result>
+        <result column="POSITION_ID" property="positionId"></result>
+        <result column="POSITION_DETAILS_CREATE_TIME" property="positionDetailsCreateTime"></result>
+        <result column="POSITION_DETAILS_MODIFIED_TIME" property="positionDetailsModifiedTime"></result>
+    </resultMap>
+    <insert id="addPositionDetails" parameterType="PositionDetails">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.POSITION_DETAILS
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="departmentId!=null">DEPARTMENT_ID,</if>
+            <if test="positionTypeId!=null">POSITION_TYPE_ID,</if>
+            <if test="positionId!=null">POSITION_ID,</if>
+            <if test="positionDetailsCreateTime!=null">POSITION_DETAILS_CREATE_TIME,</if>
+            <if test="positionDetailsModifiedTime!=null">POSITION_DETAILS_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="departmentId!=null">#{departmentId},</if>
+            <if test="positionTypeId!=null">#{positionTypeId},</if>
+            <if test="positionId!=null">#{positionId},</if>
+            <if test="positionDetailsCreateTime!=null">#{positionDetailsCreateTime},</if>
+            <if test="positionDetailsModifiedTime!=null">#{positionDetailsModifiedTime}</if>
+        </trim>
+    </insert>
+
+    <select id="queryByPositionTypeId" parameterType="PositionType" resultMap="positionDetailsMap">
+        SELECT * FROM POSITION_DETAILS WHERE POSITION_TYPE_ID=#{id}
+    </select>
+
+</mapper>

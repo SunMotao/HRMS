@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.RecruitmentDao">
+    <resultMap id="recruitmentMap" type="Recruitment">
+        <id column="id" property="id"></id>
+        <result column="POSITION_DETAILS_ID" property="positionDetailsId"></result>
+        <result column="DEPARTMENT_NAME" property="departmentName"></result>
+        <result column="POSITION_TYPE_NAME" property="positionTypeName"></result>
+        <result column="EMPLOYEE_FORM" property="employeeForm"></result>
+        <result column="JOB_ADDRESS" property="jobAddress"></result>
+        <result column="HIRE_NUM" property="hireNum"></result>
+        <result column="SALARY_RANGE" property="salaryRange"></result>
+        <result column="RECRUITMENT_STATUS" property="recruitmentStatus"></result>
+        <result column="RECRUITMENT_CREATE_TIME" property="recruitmentCreateTime"></result>
+        <result column="RECRUITMENT_MODIFIED_TIME" property="recruitmentModifiedTime"></result>
+    </resultMap>
+
+    <insert id="addRecruitment" parameterType="Position">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.RECRUITMENT
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="positionDetailsId!=null">POSITION_DETAILS_ID,</if>
+            <if test="departmentName!=null">DEPARTMENT_NAME,</if>
+            <if test="positionTypeName!=null">POSITION_TYPE_NAME,</if>
+            <if test="employeeForm!=null">EMPLOYEE_FORM,</if>
+            <if test="jobAddress!=null">JOB_ADDRESS,</if>
+            <if test="hireNum!=null">HIRE_NUM,</if>
+            <if test="salaryRange!=null">SALARY_RANGE,</if>
+            <if test="recruitmentStatus!=null">RECRUITMENT_STATUS,</if>
+            <if test="recruitmentCreateTime!=null">RECRUITMENT_CREATE_TIME,</if>
+            <if test="recruitmentModifiedTime!=null">RECRUITMENT_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="positionDetailsId!=null">#{positionDetailsId},</if>
+            <if test="departmentName!=null">#{departmentName},</if>
+            <if test="positionTypeName!=null">#{positionTypeName},</if>
+            <if test="employeeForm!=null">#{employeeForm},</if>
+            <if test="jobAddress!=null">#{jobAddress},</if>
+            <if test="hireNum!=null">#{hireNum},</if>
+            <if test="salaryRange!=null">#{salaryRange},</if>
+            <if test="recruitmentStatus!=null">#{recruitmentStatus},</if>
+            <if test="recruitmentCreateTime!=null">#{recruitmentCreateTime},</if>
+            <if test="recruitmentModifiedTime!=null">#{recruitmentModifiedTime}</if>
+        </trim>
+    </insert>
+
+    <select id="queryPositionTypeByName" parameterType="PositionType" resultMap="recruitmentMap">
+        SELECT department_id FROM POSITION_TYPE WHERE POSITION_TYPE_NAME=#{positionTypeName}
+    </select>
+
+    <select id="queryNoCompleteRecruitment" parameterType="int" resultMap="recruitmentMap">
+        SELECT * FROM  RECRUITMENT WHERE RECRUITMENT_STATUS=#{value}
+    </select>
+
+</mapper>

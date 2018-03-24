@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.TrainRecordDao">
+    <resultMap id="trainRecordMap" type="TrainRecord">
+        <id column="id" property="id"></id>
+        <result column="TRAIN_ID" property="trainId"></result>
+        <result column="EMPLOYEE_ID" property="employeeId"></result>
+        <result column="ATTEND_NUMBER" property="attendNumber"></result>
+        <result column="TRAIN_RECORD_INFO" property="trainRecordInfo"></result>
+        <result column="TRAIN_RECORD_CREATE_TIME" property="trainRecordCreateTime"></result>
+        <result column="TRAIN_RECORD_MODIFIED_TIME" property="trainRecordModifiedTime"></result>
+    </resultMap>
+
+    <insert id="addTrainRecord" parameterType="TrainRecord">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.TRAIN_RECORD
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="trainId!=null">TRAIN_ID,</if>
+            <if test="employeeId!=null">EMPLOYEE_ID,</if>
+            <if test="attendNumber!=null">ATTEND_NUMBER,</if>
+            <if test="trainRecordInfo!=null">TRAIN_RECORD_INFO,</if>
+            <if test="trainRecordCreateTime!=null">TRAIN_RECORD_CREATE_TIME,</if>
+            <if test="trainRecordModifiedTime!=null">TRAIN_RECORD_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="trainId!=null">#{trainId},</if>
+            <if test="employeeId!=null">#{employeeId},</if>
+            <if test="attendNumber!=null">#{attendNumber},</if>
+            <if test="trainRecordInfo!=null">#{trainRecordInfo},</if>
+            <if test="trainRecordCreateTime!=null">#{trainRecordCreateTime},</if>
+            <if test="trainRecordModifiedTime!=null">#{trainRecordModifiedTime}</if>
+        </trim>
+    </insert>
+</mapper>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.ResumeDao">
+    <resultMap id="resumeMap" type="Resume">
+        <id column="id" property="id"></id>
+        <result column="VISITOR_ID" property="visitorId"></result>
+        <result column="BASE_INFO_ID" property="baseInfoId"></result>
+        <result column="RESUME_NAME" property="resumeName"></result>
+        <result column="JOB_EXPERIENCE" property="jobExperience"></result>
+        <result column="EDUCATION_BACKGROUND" property="educationBackground"></result>
+        <result column="EVALUATION" property="evaluation"></result>
+        <result column="SALARY_EXCEPTION" property="salaryException"></result>
+        <result column="JOB_CATEGORY" property="jobCategory"></result>
+        <result column="REAL_NAME" property="realName"></result>
+        <result column="SEEKING_STATUS" property="seekingStatus"></result>
+        <result column="SEX" property="sex"></result>
+        <result column="AGE" property="age"></result>
+        <result column="ID_CARD" property="idCard"></result>
+        <result column="EMAIL" property="email"></result>
+        <result column="PHONE" property="phone"></result>
+        <result column="RESUME_CREATE_TIME" property="resumeCreateTime"></result>
+        <result column="RESUME_MODIFIED_TIME" property="resumeModifiedTime"></result>
+    </resultMap>
+
+    <insert id="addResume" parameterType="Resume">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.RESUME
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="visitorId!=null">VISITOR_ID,</if>
+            <if test="baseInfoId!=null">BASE_INFO_ID,</if>
+            <if test="resumeName!=null">RESUME_NAME,</if>
+            <if test="jobExperience!=null">JOB_EXPERIENCE,</if>
+            <if test="educationBackground!=null">EDUCATION_BACKGROUND,</if>
+            <if test="evaluation!=null">EVALUATION,</if>
+            <if test="salaryException!=null">SALARY_EXCEPTION,</if>
+            <if test="jobCategory!=null">JOB_CATEGORY,</if>
+            <if test="realName!=null">REAL_NAME,</if>
+            <if test="seekingStatus!=null">SEEKING_STATUS,</if>
+            <if test="sex!=null">SEX,</if>
+            <if test="age!=null">AGE,</if>
+            <if test="idCard!=null">ID_CARD,</if>
+            <if test="email!=null">EMAIL,</if>
+            <if test="phone!=null">PHONE,</if>
+            <if test="resumeCreateTime!=null">RESUME_CREATE_TIME,</if>
+            <if test="resumeModifiedTime!=null">RESUME_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="visitorId!=null">#{visitorId},</if>
+            <if test="baseInfoId!=null">#{baseInfoId},</if>
+            <if test="resumeName!=null">#{resumeName},</if>
+            <if test="jobExperience!=null">#{jobExperience},</if>
+            <if test="educationBackground!=null">#{educationBackground},</if>
+            <if test="evaluation!=null">#{evaluation},</if>
+            <if test="salaryException!=null">#{salaryException},</if>
+            <if test="jobCategory!=null">#{jobCategory},</if>
+            <if test="realName!=null">#{realName},</if>
+            <if test="seekingStatus!=null">#{seekingStatus},</if>
+            <if test="sex!=null">#{sex},</if>
+            <if test="age!=null">#{age},</if>
+            <if test="idCard!=null">#{idCard},</if>
+            <if test="email!=null">#{email},</if>
+            <if test="phone!=null">#{phone},</if>
+            <if test="resumeCreateTime!=null">#{resumeCreateTime},</if>
+            <if test="resumeModifiedTime!=null">#{resumeModifiedTime}</if>
+        </trim>
+    </insert>
+
+    <select id="queryIdByVisitorId" parameterType="int" resultMap="resumeMap">
+        SELECT * FROM RESUME WHERE VISITOR_ID=#{value}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.TrainDao">
+    <resultMap id="trainMap" type="Train">
+        <id column="id" property="id"></id>
+        <result column="EMPLOYEE_NEWS_ID" property="employeeNewsId"></result>
+        <result column="TRAIN_TITLE" property="trainTitle"></result>
+        <result column="TRAIN_CONTENT" property="trainContent"></result>
+        <result column="TRAIN_ADDRESS" property="trainAddress"></result>
+        <result column="TRAIN_TIME" property="trainTime"></result>
+        <result column="TRAIN_PEOPLE" property="trainPeople"></result>
+        <result column="TRAIN_CREATE_TIME" property="trainCreateTime"></result>
+        <result column="TRAIN_MODIFIED_TIME" property="trainModifiedTime"></result>
+    </resultMap>
+
+    <insert id="addTrain" parameterType="Train">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.TRAIN
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="employeeNewsId!=null">EMPLOYEE_NEWS_ID,</if>
+            <if test="trainTitle!=null">TRAIN_TITLE,</if>
+            <if test="trainContent!=null">TRAIN_CONTENT,</if>
+            <if test="trainAddress!=null">TRAIN_ADDRESS,</if>
+            <if test="trainTime!=null">TRAIN_TIME,</if>
+            <if test="trainPeople!=null">TRAIN_PEOPLE,</if>
+            <if test="trainCreateTime!=null">TRAIN_CREATE_TIME,</if>
+            <if test="trainModifiedTime!=null">TRAIN_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="employeeNewsId!=null">#{employeeNewsId},</if>
+            <if test="trainTitle!=null">#{trainTitle},</if>
+            <if test="trainContent!=null">#{trainContent},</if>
+            <if test="trainAddress!=null">#{trainAddress},</if>
+            <if test="trainTime!=null">#{trainTime},</if>
+            <if test="trainPeople!=null">#{trainPeople},</if>
+            <if test="trainCreateTime!=null">#{trainCreateTime},</if>
+            <if test="trainModifiedTime!=null">#{trainModifiedTime}</if>
+        </trim>
+    </insert>
+
+    <select id="queryAllTrainByTimeSort" resultMap="trainMap">
+        SELECT * FROM TRAIN ORDER BY TRAIN_CREATE_TIME DESC
+    </select>
+
+    <update id="updateEmployeeNewsId" parameterType="int">
+        UPDATE TRAIN SET EMPLOYEE_NEWS_ID=#{0} WHERE ID=#{1}
+    </update>
+
+</mapper>

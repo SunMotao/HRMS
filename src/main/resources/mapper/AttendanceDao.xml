@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.AttendanceDao">
+    <resultMap id="attendanceMap" type="Attendance">
+        <id column="id" property="id"></id>
+        <result column="EMPLOYEE_ID" property="employeeId"></result>
+        <result column="ATTENDANCE_TYPE" property="attendanceType"></result>
+        <result column="ATTENDANCE_BEGIN_TIME" property="attendanceBeginTime"></result>
+        <result column="ATTENDANCE_END_TIME" property="attendanceEndTime"></result>
+        <result column="ATTENDANCE_STATUS" property="attendanceStatus"></result>
+        <result column="ATTENDANCE_INFO" property="attendanceInfo"></result>
+        <result column="ATTENDANCE_CREATE_TIME" property="attendanceCreateTime"></result>
+        <result column="ATTENDANCE_MODIFIED_TIME" property="attendanceModifiedTime"></result>
+    </resultMap>
+
+    <insert id="addAttendance" parameterType="Attendance">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.ATTENDANCE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="employeeId!=null">EMPLOYEE_ID,</if>
+            <if test="attendanceType!=null">ATTENDANCE_TYPE,</if>
+            <if test="attendanceBeginTime!=null">ATTENDANCE_BEGIN_TIME,</if>
+            <if test="attendanceEndTime!=null">ATTENDANCE_END_TIME,</if>
+            <if test="attendanceStatus!=null">ATTENDANCE_STATUS,</if>
+            <if test="attendanceInfo!=null">ATTENDANCE_INFO,</if>
+            <if test="attendanceCreateTime!=null">ATTENDANCE_CREATE_TIME,</if>
+            <if test="attendanceModifiedTime!=null">ATTENDANCE_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="employeeId!=null">#{employeeId},</if>
+            <if test="attendanceType!=null">#{attendanceType},</if>
+            <if test="attendanceBeginTime!=null">#{attendanceBeginTime},</if>
+            <if test="attendanceEndTime!=null">#{attendanceEndTime},</if>
+            <if test="attendanceStatus!=null">#{attendanceStatus},</if>
+            <if test="attendanceInfo!=null">#{attendanceInfo},</if>
+            <if test="attendanceCreateTime!=null">#{attendanceCreateTime},</if>
+            <if test="attendanceModifiedTime!=null">#{attendanceModifiedTime}</if>
+        </trim>
+    </insert>
+
+    <select id="queryAttendanceByTimeSort" parameterType="Employee" resultMap="attendanceMap">
+        SELECT * FROM ATTENDANCE WHERE EMPLOYEE_ID=#{id}
+    </select>
+
+    <update id="attendanceSignOut" parameterType="Attendance">
+        UPDATE ATTENDANCE SET ATTENDANCE_END_TIME=#{attendanceEndTime} WHERE ID=#{id}
+    </update>
+
+    <select id="queryAttendanceByEmployeeIdOneMonth" resultMap="attendanceMap">
+        SELECT * FROM ATTENDANCE WNHERE
+    </select>
+
+</mapper>

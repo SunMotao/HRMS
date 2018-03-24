@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.ApplyDao">
+    <resultMap id="applyMap" type="Apply">
+        <id column="id" property="id"></id>
+        <result column="VISITOR_ID" property="visitorId"></result>
+        <result column="RESUME_ID" property="resumeId"></result>
+        <result column="POSITION_TYPE_ID" property="positionTypeId"></result>
+        <result column="APPLY_STATUS" property="applyStatus"></result>
+        <result column="APPLY_ADDRESS" property="applyAddress"></result>
+        <result column="APPLY_DATE" property="applyDate"></result>
+        <result column="APPLY_INFO" property="applyInfo"></result>
+        <result column="VISITOR_NEWS_ID" property="visitorNewsId"></result>
+        <result column="APPLY_CREATE_TIME" property="applyCreateTime"></result>
+        <result column="APPLY_MODIFIED_TIME" property="applyModifiedTime"></result>
+    </resultMap>
+
+    <insert id="addApply" parameterType="Apply">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.APPLY
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="visitorId!=null">VISITOR_ID,</if>
+            <if test="resumeId!=null">RESUME_ID,</if>
+            <if test="positionTypeId!=null">POSITION_TYPE_ID,</if>
+            <if test="applyStatus!=null">APPLY_STATUS,</if>
+            <if test="applyAddress!=null">APPLY_ADDRESS,</if>
+            <if test="applyDate!=null">APPLY_DATE,</if>
+            <if test="applyInfo!=null">APPLY_INFO,</if>
+            <if test="visitorNewsId!=null">VISITOR_NEWS_ID,</if>
+            <if test="applyCreateTime!=null">APPLY_CREATE_TIME,</if>
+            <if test="applyModifiedTime!=null">APPLY_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="visitorId!=null">#{visitorId},</if>
+            <if test="resumeId!=null">#{resumeId},</if>
+            <if test="positionTypeId!=null">#{positionTypeId},</if>
+            <if test="applyStatus!=null">#{applyStatus},</if>
+            <if test="applyAddress!=null">#{applyAddress},</if>
+            <if test="applyDate!=null">#{applyDate},</if>
+            <if test="applyInfo!=null">#{applyInfo},</if>
+            <if test="visitorNewsId!=null">#{visitorNewsId},</if>
+            <if test="applyCreateTime!=null">#{applyCreateTime},</if>
+            <if test="applyModifiedTime!=null">#{applyModifiedTime}</if>
+        </trim>
+    </insert>
+
+    <select id="queryNoSeeApply" parameterType="int" resultMap="applyMap">
+        SELECT * FROM APPLY WHERE APPLY_STATUS=#{value}
+    </select>
+
+    <update id="applyPass" parameterType="Apply" >
+        UPDATE APPLY SET APPLY_STATUS=#{applyStatus},APPLY_ADDRESS=#{applyAddress},
+         APPLY_DATE=#{applyDate},APPLY_INFO=#{applyInfo} WHERE ID=#{id}
+    </update>
+
+    <update id="applyWaive" parameterType="int" >
+        UPDATE APPLY SET APPLY_STATUS=#{0} WHERE ID=#{1}
+    </update>
+
+    <update id="updateVisitorNewsId" parameterType="int">
+        UPDATE APPLY SET VISITOR_NEWS_ID=#{1} WHERE ID=#{0}
+    </update>
+
+    <select id="queryApplyByVisitorNewsId" parameterType="int" resultMap="applyMap">
+        SELECT * FROM APPLY WHERE VISITOR_NEWS_ID=#{value}
+    </select>
+
+</mapper>

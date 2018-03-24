@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.DepartmentDao">
+    <resultMap id="departmentMap" type="Department">
+        <id column="id" property="id"></id>
+        <result column="DEPARTMENT_NAME" property="departmentName"></result>
+        <result column="DEPARTMENT_STATUS" property="departmentStatus"></result>
+        <result column="DEPARTMENT_CREATE_TIME" property="departmentCreateTime"></result>
+        <result column="DEPARTMENT_MODIFIED_TIME" property="departmentModifiedTime"></result>
+        <collection property="positionTypeList" ofType="PositionType" column="{departmentId=id}" select="com.sxt.dao.PositionTypeDao.queryDepartmentAndPosition"></collection>
+    </resultMap>
+    <insert id="addDepartment" parameterType="Department">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.DEPARTMENT
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="departmentName!=null">DEPARTMENT_NAME,</if>
+            <if test="departmentStatus!=null">DEPARTMENT_STATUS,</if>
+            <if test="departmentCreateTime!=null">DEPARTMENT_CREATE_TIME,</if>
+            <if test="departmentModifiedTime!=null">DEPARTMENT_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="departmentName!=null">#{departmentName},</if>
+            <if test="departmentStatus!=null">#{departmentStatus},</if>
+            <if test="departmentCreateTime!=null">#{departmentCreateTime},</if>
+            <if test="departmentModifiedTime!=null">#{departmentModifiedTime}</if>
+        </trim>
+    </insert>
+    <select id="queryAllDepartment" resultMap="departmentMap">
+        SELECT * FROM DEPARTMENT
+    </select>
+
+    <select id="queryDepartmentAndPosition" resultMap="departmentMap">
+        SELECT * FROM DEPARTMENT
+    </select>
+
+</mapper>

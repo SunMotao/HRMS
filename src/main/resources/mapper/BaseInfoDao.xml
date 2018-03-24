@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.BaseInfoDao">
+    <resultMap id="baseInfoMap" type="BaseInfo">
+        <id column="id" property="id"></id>
+        <result column="REAL_NAME" property="realName"></result>
+        <result column="SEX" property="sex"></result>
+        <result column="AGE" property="age"></result>
+        <result column="NATION" property="nation"></result>
+        <result column="FAMILY" property="family"></result>
+        <result column="ADDRESS" property="address"></result>
+        <result column="IDENTITY_CARD" property="identityCard"></result>
+        <result column="BASE_INFO_CREATE_TIME" property="baseInfoCreateTime"></result>
+        <result column="BASE_INFO_MODIFIED_TIME" property="baseInfoModifiedTime"></result>
+        <result column="PHOTO" property="photo"></result>
+    </resultMap>
+
+    <insert id="addBaseInfoId" parameterType="BaseInfo">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.BASE_INFO
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="realName!=null">REAL_NAME,</if>
+            <if test="sex!=null">SEX,</if>
+            <if test="age!=null">AGE,</if>
+            <if test="nation!=null">NATION,</if>
+            <if test="family!=null">FAMILY,</if>
+            <if test="address!=null">ADDRESS,</if>
+            <if test="identityCard!=null">IDENTITY_CARD,</if>
+            <if test="baseInfoCreateTime!=null">BASE_INFO_CREATE_TIME,</if>
+            <if test="baseInfoModifiedTime!=null">BASE_INFO_MODIFIED_TIME,</if>
+            <if test="photo!=null">PHOTO</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="realName!=null">#{realName},</if>
+            <if test="sex!=null">#{sex},</if>
+            <if test="age!=null">#{age},</if>
+            <if test="nation!=null">#{nation},</if>
+            <if test="family!=null">#{family},</if>
+            <if test="address!=null">#{address},</if>
+            <if test="identityCard!=null">#{identityCard},</if>
+            <if test="baseInfoCreateTime!=null">#{baseInfoCreateTime},</if>
+            <if test="baseInfoModifiedTime!=null">#{baseInfoModifiedTime},</if>
+            <if test="photo!=null">#{photo}</if>
+        </trim>
+    </insert>
+
+        <update id="updateBaseInfo" parameterType="BaseInfo">
+            UPDATE BASE_INFO SET
+            <trim suffixOverrides=",">
+                <if test="realName!=null">REAL_NAME=#{realName},</if>
+                <if test="sex!=null">SEX=#{sex},</if>
+                <if test="age!=null">AGE=#{age},</if>
+                <if test="nation!=null">NATION=#{nation},</if>
+                <if test="family!=null">FAMILY=#{family},</if>
+                <if test="address!=null">ADDRESS=#{address},</if>
+                <if test="identityCard!=null">IDENTITY_CARD=#{identityCard},</if>
+                <if test="baseInfoCreateTime!=null">BASE_INFO_CREATE_TIME=#{baseInfoCreateTime},</if>
+                <if test="baseInfoModifiedTime!=null">BASE_INFO_MODIFIED_TIME=#{baseInfoModifiedTime},</if>
+                <if test="photo!=null">PHOTO=#{photo}</if>
+            </trim>
+            <where>
+                <choose>
+                    <when test="id!=null">
+                        AND ID=#{id}
+                    </when>
+                    <otherwise>
+                        AND 1=2
+                    </otherwise>
+                </choose>
+            </where>
+        </update>
+</mapper>

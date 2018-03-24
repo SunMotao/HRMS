@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.PositionTypeDao">
+    <resultMap id="positionTypeMap" type="PositionType">
+        <id column="id" property="id"></id>
+        <result column="DEPARTMENT_ID" property="departmentId"></result>
+        <result column="POSITION_TYPE_NAME" property="positionTypeName"></result>
+        <result column="POSITION_TYPE_INFO" property="positionTypeInfo"></result>
+        <result column="POSITION_TYPE_CREATE_TIME" property="positionTypeCreateTime"></result>
+        <result column="POSITION_TYPE_MODIFIED_TIME" property="positionTypeModifiedTime"></result>
+        <result column="POSITION_TYPE_STATUS" property="positionTypeStatus"></result>
+    </resultMap>
+
+    <insert id="addPositionType" parameterType="PositionType">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.POSITION_TYPE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="departmentId!=null">DEPARTMENT_ID,</if>
+            <if test="positionTypeName!=null">POSITION_TYPE_NAME,</if>
+            <if test="positionTypeInfo!=null">POSITION_TYPE_INFO,</if>
+            <if test="positionTypeCreateTime!=null">POSITION_TYPE_CREATE_TIME,</if>
+            <if test="positionTypeModifiedTime!=null">POSITION_TYPE_MODIFIED_TIME,</if>
+            <if test="positionTypeStatus!=null">POSITION_TYPE_STATUS</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="departmentId!=null">#{departmentId},</if>
+            <if test="positionTypeName!=null">#{positionTypeName},</if>
+            <if test="positionTypeInfo!=null">#{positionTypeInfo},</if>
+            <if test="positionTypeCreateTime!=null">#{positionTypeCreateTime},</if>
+            <if test="positionTypeModifiedTime!=null">#{positionTypeModifiedTime},</if>
+            <if test="positionTypeStatus!=null">#{positionTypeStatus}</if>
+        </trim>
+    </insert>
+
+        <select id="queryDepartmentAndPosition" parameterType="PositionType" resultMap="positionTypeMap">
+            SELECT * FROM position_type
+            <where>
+                <choose>
+                    <when test="departmentId!=null">
+                        AND department_Id=#{departmentId}
+                    </when>
+                    <otherwise>
+                        AND 1=2
+                    </otherwise>
+                </choose>
+            </where>
+        </select>
+
+        <select id="queryAllPositionType" resultMap="positionTypeMap">
+            SELECT * FROM position_type
+        </select>
+
+    <select id="queryPositionTypeById" parameterType="int" resultMap="positionTypeMap">
+        SELECT * FROM position_type WHERE ID=#{id}
+    </select>
+
+</mapper>

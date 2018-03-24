@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Oracle - @localhost" uuid="1ba21e2d-e2d6-402b-a648-000889a593a8">
+    <database-info product="Oracle" version="Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">
+      <extra-name-characters>$#</extra-name-characters>
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="ORACLE" format-version="2.5">
+      <schema id="1" name="HRMS">
+        <object-id>49</object-id>
+        <created-timestamp>2018-03-13.15:35:53</created-timestamp>
+        <modified-timestamp>2018-03-24.20:13:39</modified-timestamp>
+        <introspection-timestamp>2018-03-24.20:13:39</introspection-timestamp>
+      </schema>
+      <sequence id="2" parent="1" name="HRMS_SEQ">
+        <object-id>20674</object-id>
+        <created-timestamp>2018-03-14.11:11:30</created-timestamp>
+        <modified-timestamp>2018-03-14.11:11:30</modified-timestamp>
+        <min-value>1</min-value>
+        <max-value>99999999</max-value>
+        <increment-by>2</increment-by>
+        <next-value>49</next-value>
+        <cache-size>-2147483648</cache-size>
+      </sequence>
+      <table id="3" parent="1" name="ADMIN">
+        <object-id>20635</object-id>
+        <created-timestamp>2018-03-13.15:43:11</created-timestamp>
+        <modified-timestamp>2018-03-13.15:51:50</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="4" parent="1" name="ADMIN_NEWS">
+        <object-id>21053</object-id>
+        <created-timestamp>2018-03-22.16:27:27</created-timestamp>
+        <modified-timestamp>2018-03-22.18:25:09</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="5" parent="1" name="APPLY">
+        <object-id>20647</object-id>
+        <created-timestamp>2018-03-13.16:27:46</created-timestamp>
+        <modified-timestamp>2018-03-23.11:22:14</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="6" parent="1" name="ATTENDANCE">
+        <object-id>20653</object-id>
+        <created-timestamp>2018-03-13.16:41:40</created-timestamp>
+        <modified-timestamp>2018-03-24.20:13:39</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="7" parent="1" name="BASE_INFO">
+        <object-id>20667</object-id>
+        <created-timestamp>2018-03-13.17:06:50</created-timestamp>
+        <modified-timestamp>2018-03-17.17:23:40</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="8" parent="1" name="DEPARTMENT">
+        <object-id>20639</object-id>
+        <created-timestamp>2018-03-13.15:57:54</created-timestamp>
+        <modified-timestamp>2018-03-20.19:52:32</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="9" parent="1" name="EMPLOYEE">
+        <object-id>20637</object-id>
+        <created-timestamp>2018-03-13.15:50:24</created-timestamp>
+        <modified-timestamp>2018-03-23.15:59:53</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="10" parent="1" name="EMPLOYEE_NEWS">
+        <object-id>20665</object-id>
+        <created-timestamp>2018-03-13.16:59:54</created-timestamp>
+        <modified-timestamp>2018-03-13.19:39:23</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="11" parent="1" name="POSITION">
+        <object-id>20643</object-id>
+        <created-timestamp>2018-03-13.16:11:34</created-timestamp>
+        <modified-timestamp>2018-03-20.11:19:52</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="12" parent="1" name="POSITION_DETAILS">
+        <object-id>20962</object-id>
+        <created-timestamp>2018-03-20.13:15:59</created-timestamp>
+        <modified-timestamp>2018-03-20.13:18:56</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="13" parent="1" name="POSITION_TYPE">
+        <object-id>20641</object-id>
+        <created-timestamp>2018-03-13.16:09:45</created-timestamp>
+        <modified-timestamp>2018-03-20.10:13:52</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="14" parent="1" name="RECRUITMENT">
+        <object-id>20645</object-id>
+        <created-timestamp>2018-03-13.16:24:18</created-timestamp>
+        <modified-timestamp>2018-03-22.13:44:12</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="15" parent="1" name="RESUME">
+        <object-id>20659</object-id>
+        <created-timestamp>2018-03-13.16:52:08</created-timestamp>
+        <modified-timestamp>2018-03-22.13:00:50</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="16" parent="1" name="REWARDS">
+        <object-id>20655</object-id>
+        <created-timestamp>2018-03-13.16:44:25</created-timestamp>
+        <modified-timestamp>2018-03-24.15:43:12</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="17" parent="1" name="SALARY">
+        <object-id>20657</object-id>
+        <created-timestamp>2018-03-13.16:48:21</created-timestamp>
+        <modified-timestamp>2018-03-24.16:31:49</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="18" parent="1" name="TRAIN">
+        <object-id>20649</object-id>
+        <created-timestamp>2018-03-13.16:33:43</created-timestamp>
+        <modified-timestamp>2018-03-23.20:48:49</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="19" parent="1" name="TRAIN_RECORD">
+        <object-id>20651</object-id>
+        <created-timestamp>2018-03-13.16:38:05</created-timestamp>
+        <modified-timestamp>2018-03-23.21:04:38</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="20" parent="1" name="VISITOR">
+        <object-id>20633</object-id>
+        <created-timestamp>2018-03-13.15:35:53</created-timestamp>
+        <modified-timestamp>2018-03-14.23:06:41</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <table id="21" parent="1" name="VISITOR_NEWS">
+        <object-id>20663</object-id>
+        <created-timestamp>2018-03-13.16:58:36</created-timestamp>
+        <modified-timestamp>2018-03-13.19:38:11</modified-timestamp>
+        <organization>HEAP</organization>
+      </table>
+      <column id="22" parent="3" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="23" parent="3" name="ADMIN_NAME">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="24" parent="3" name="ADMIN_PASSWORD">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="25" parent="3" name="ADMIN_STATUS">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="26" parent="3" name="ADMIN_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="27" parent="3" name="ADMIN_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <index id="28" parent="3" name="ADMIN_PK">
+        <object-id>20636</object-id>
+        <created-timestamp>2018-03-13.15:43:11</created-timestamp>
+        <modified-timestamp>2018-03-13.15:43:11</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="29" parent="3" name="ADMIN_PK">
+        <modified-timestamp>2018-03-13.15:43:11</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>ADMIN_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="30" parent="4" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="31" parent="4" name="ADMIN_NEWS_TITLE">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="32" parent="4" name="ADMIN_NEWS_CONTENT">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="33" parent="4" name="ADMIN_NEWS_STATUS">
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="34" parent="4" name="ADMIN_NEWS_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="35" parent="4" name="ADMIN_NEWS_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="36" parent="4" name="ADMIN_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="37" parent="4" name="VISITOR_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="38" parent="4" name="EMPLOYEE_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <index id="39" parent="4" name="SYS_C007266">
+        <name-surrogate>1</name-surrogate>
+        <object-id>21054</object-id>
+        <created-timestamp>2018-03-22.16:27:29</created-timestamp>
+        <modified-timestamp>2018-03-22.16:27:29</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="40" parent="4" name="SYS_C007266">
+        <name-surrogate>1</name-surrogate>
+        <modified-timestamp>2018-03-22.16:27:30</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>SYS_C007266</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="41" parent="4" name="ADMIN_NEWS_ADMIN_PK">
+        <modified-timestamp>2018-03-22.16:29:23</modified-timestamp>
+        <columns>ADMIN_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.ADMIN.ADMIN_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="42" parent="4" name="ADMIN_NEWS_VISITOR_PK">
+        <modified-timestamp>2018-03-22.17:09:22</modified-timestamp>
+        <columns>VISITOR_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.VISITOR.USER_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="43" parent="4" name="ADMIN_NEWS_EMPLOYEE_PK">
+        <modified-timestamp>2018-03-22.17:09:22</modified-timestamp>
+        <columns>EMPLOYEE_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="44" parent="5" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="45" parent="5" name="VISITOR_ID">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="46" parent="5" name="RESUME_ID">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="47" parent="5" name="POSITION_TYPE_ID">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="48" parent="5" name="APPLY_STATUS">
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="49" parent="5" name="APPLY_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="50" parent="5" name="APPLY_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="51" parent="5" name="APPLY_ADDRESS">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="52" parent="5" name="APPLY_DATE">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="53" parent="5" name="APPLY_INFO">
+        <data-type>NUMBER(*)</data-type>
+      </column>
+      <column id="54" parent="5" name="VISITOR_NEWS_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <index id="55" parent="5" name="APPLY_PK">
+        <object-id>20648</object-id>
+        <created-timestamp>2018-03-13.16:27:46</created-timestamp>
+        <modified-timestamp>2018-03-13.16:27:46</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="56" parent="5" name="APPLY_PK">
+        <modified-timestamp>2018-03-13.16:27:46</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>APPLY_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="57" parent="5" name="VISITOR_ID__PK">
+        <modified-timestamp>2018-03-13.19:29:14</modified-timestamp>
+        <columns>VISITOR_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.VISITOR.USER_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="58" parent="5" name="RESUME_ID__PK">
+        <modified-timestamp>2018-03-13.19:29:44</modified-timestamp>
+        <columns>RESUME_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.RESUME.RESUME_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="59" parent="5" name="APPLY_POSITION_TYPE_PK">
+        <modified-timestamp>2018-03-13.19:30:30</modified-timestamp>
+        <columns>POSITION_TYPE_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.POSITION_TYPE.POSITION_TYPE_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="60" parent="5" name="APPLY_VISITOR_NEWS_PK">
+        <modified-timestamp>2018-03-23.11:22:14</modified-timestamp>
+        <columns>VISITOR_NEWS_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.VISITOR_NEWS.VISITOR_NEWS_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="61" parent="6" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="62" parent="6" name="EMPLOYEE_ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="63" parent="6" name="ATTENDANCE_TYPE">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="64" parent="6" name="ATTENDANCE_BEGIN_TIME">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="65" parent="6" name="ATTENDANCE_END_TIME">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="66" parent="6" name="ATTENDANCE_STATUS">
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="67" parent="6" name="ATTENDANCE_INFO">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="68" parent="6" name="ATTENDANCE_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="69" parent="6" name="ATTENDANCE_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <index id="70" parent="6" name="ATTENDANCE_PK">
+        <object-id>20654</object-id>
+        <created-timestamp>2018-03-13.16:41:40</created-timestamp>
+        <modified-timestamp>2018-03-13.16:41:40</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="71" parent="6" name="ATTENDANCE_PK">
+        <modified-timestamp>2018-03-13.16:41:40</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>ATTENDANCE_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="72" parent="6" name="EMPLOYEE_ID_ATTENDANCE_PK">
+        <modified-timestamp>2018-03-24.14:14:31</modified-timestamp>
+        <columns>EMPLOYEE_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.EMPLOYEE.EMPLOYEE_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="73" parent="7" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="74" parent="7" name="REAL_NAME">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="75" parent="7" name="SEX">
+        <data-type>VARCHAR2(100)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="76" parent="7" name="AGE">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="77" parent="7" name="NATION">
+        <data-type>VARCHAR2(100)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="78" parent="7" name="FAMILY">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="79" parent="7" name="ADDRESS">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="80" parent="7" name="IDENTITY_CARD">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="81" parent="7" name="BASE_INFO_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="82" parent="7" name="BASE_INFO_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="83" parent="7" name="PHOTO">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <index id="84" parent="7" name="BASE_INFO_PK">
+        <object-id>20668</object-id>
+        <created-timestamp>2018-03-13.17:06:50</created-timestamp>
+        <modified-timestamp>2018-03-13.17:06:50</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="85" parent="7" name="BASE_INFO_PK">
+        <modified-timestamp>2018-03-13.17:06:50</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>BASE_INFO_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="86" parent="8" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="87" parent="8" name="DEPARTMENT_NAME">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="88" parent="8" name="DEPARTMENT_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="89" parent="8" name="DEPARTMENT_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="90" parent="8" name="DEPARTMENT_STATUS">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <index id="91" parent="8" name="DEPARTMENT_PK">
+        <object-id>20640</object-id>
+        <created-timestamp>2018-03-13.15:57:54</created-timestamp>
+        <modified-timestamp>2018-03-13.15:57:54</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="92" parent="8" name="DEPARTMENT_PK">
+        <modified-timestamp>2018-03-13.15:57:54</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>DEPARTMENT_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="93" parent="9" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="94" parent="9" name="BASE_INFO_ID">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="95" parent="9" name="DEPARTMENT_ID">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="96" parent="9" name="EMPLOYEE_NAME">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="97" parent="9" name="EMPLOYEE_PASSWORD">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>000000</default-expression>
+      </column>
+      <column id="98" parent="9" name="EMPLOYEE_FORM">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="99" parent="9" name="EMPLOYEE_STATUS">
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="100" parent="9" name="EMPLOYEE_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="101" parent="9" name="EMPLOYEE_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="102" parent="9" name="HIRE_TIME">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="103" parent="9" name="EMPLOYEE_PHONE">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="104" parent="9" name="EMPLOYEE_EMAIL">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <index id="105" parent="9" name="EMPLOYEE_PK">
+        <object-id>20638</object-id>
+        <created-timestamp>2018-03-13.15:50:24</created-timestamp>
+        <modified-timestamp>2018-03-13.15:50:24</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="106" parent="9" name="EMPLOYEE_PK">
+        <modified-timestamp>2018-03-13.15:50:24</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>EMPLOYEE_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="107" parent="9" name="BASE_INFO_EMPLOYEE">
+        <modified-timestamp>2018-03-13.19:24:19</modified-timestamp>
+        <columns>BASE_INFO_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.BASE_INFO.BASE_INFO_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="108" parent="9" name="DEPARTMENT_EMPLOYEE">
+        <modified-timestamp>2018-03-13.19:24:46</modified-timestamp>
+        <columns>DEPARTMENT_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.DEPARTMENT.DEPARTMENT_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="109" parent="10" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="110" parent="10" name="EMPLOYEE_ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="111" parent="10" name="EMPLOYEE_NEWS_TITLE">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="112" parent="10" name="EMPLOYEE_NEWS_CONTENT">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="113" parent="10" name="EMPLOYEE_NEWS_STATUS">
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="114" parent="10" name="EMPLOYEE_NEWS_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="115" parent="10" name="EMPLOYEE_NEWS_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <index id="116" parent="10" name="EMPLOYEE_NEWS_PK">
+        <object-id>20666</object-id>
+        <created-timestamp>2018-03-13.16:59:54</created-timestamp>
+        <modified-timestamp>2018-03-13.16:59:54</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="117" parent="10" name="EMPLOYEE_NEWS_PK">
+        <modified-timestamp>2018-03-13.16:59:54</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>EMPLOYEE_NEWS_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="118" parent="10" name="EMPLOYEE_NEWS_ID_PK">
+        <modified-timestamp>2018-03-13.19:39:23</modified-timestamp>
+        <columns>EMPLOYEE_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="119" parent="11" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="120" parent="11" name="POSITION_TYPE_ID">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="121" parent="11" name="POSITION_NAME">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="122" parent="11" name="POSITION_INFO">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="123" parent="11" name="POSITION_STATUS">
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="124" parent="11" name="POSITION_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="125" parent="11" name="POSITION_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <index id="126" parent="11" name="POSITION_PK">
+        <object-id>20644</object-id>
+        <created-timestamp>2018-03-13.16:11:34</created-timestamp>
+        <modified-timestamp>2018-03-13.16:11:34</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="127" parent="11" name="POSITION_PK">
+        <modified-timestamp>2018-03-13.16:11:34</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>POSITION_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="128" parent="11" name="POSITION_TYPE_ID_PK">
+        <modified-timestamp>2018-03-13.19:26:57</modified-timestamp>
+        <columns>POSITION_TYPE_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.POSITION_TYPE.POSITION_TYPE_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="129" parent="12" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="130" parent="12" name="DEPARTMENT_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="131" parent="12" name="POSITION_TYPE_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="132" parent="12" name="POSITION_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="133" parent="12" name="POSITION_DETAILS_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="134" parent="12" name="POSITION_DETAILS_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <index id="135" parent="12" name="SYS_C007244">
+        <name-surrogate>1</name-surrogate>
+        <object-id>20963</object-id>
+        <created-timestamp>2018-03-20.13:16:01</created-timestamp>
+        <modified-timestamp>2018-03-20.13:16:01</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="136" parent="12" name="SYS_C007244">
+        <name-surrogate>1</name-surrogate>
+        <modified-timestamp>2018-03-20.13:16:01</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>SYS_C007244</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="137" parent="12" name="DEPARTMENT_DETAILS_PK">
+        <modified-timestamp>2018-03-20.13:17:22</modified-timestamp>
+        <columns>DEPARTMENT_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="138" parent="12" name="TYPE_DETAILS_PK">
+        <modified-timestamp>2018-03-20.13:18:56</modified-timestamp>
+        <columns>POSITION_TYPE_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.POSITION_TYPE.POSITION_TYPE_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="139" parent="12" name="POSITION_DETAILS_PK">
+        <modified-timestamp>2018-03-20.13:18:56</modified-timestamp>
+        <columns>POSITION_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.POSITION.POSITION_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="140" parent="13" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="141" parent="13" name="DEPARTMENT_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="142" parent="13" name="POSITION_TYPE_NAME">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="143" parent="13" name="POSITION_TYPE_INFO">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="144" parent="13" name="POSITION_TYPE_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="145" parent="13" name="POSITION_TYPE_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="146" parent="13" name="POSITION_TYPE_STATUS">
+        <data-type>NUMBER(2)</data-type>
+      </column>
+      <index id="147" parent="13" name="POSITION_TYPE_PK">
+        <object-id>20642</object-id>
+        <created-timestamp>2018-03-13.16:09:45</created-timestamp>
+        <modified-timestamp>2018-03-13.16:09:45</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="148" parent="13" name="POSITION_TYPE_PK">
+        <modified-timestamp>2018-03-13.16:09:45</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>POSITION_TYPE_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="149" parent="13" name="POSITION_TYPE_DEPARTMENT_PK">
+        <modified-timestamp>2018-03-13.19:25:54</modified-timestamp>
+        <columns>DEPARTMENT_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="150" parent="14" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="151" parent="14" name="EMPLOYEE_FORM">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="152" parent="14" name="JOB_ADDRESS">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="153" parent="14" name="HIRE_NUM">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="154" parent="14" name="RECRUITMENT_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="155" parent="14" name="RECRUITMENT_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="156" parent="14" name="POSITION_DETAILS_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="157" parent="14" name="RECRUITMENT_STATUS">
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="158" parent="14" name="SALARY_RANGE">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="159" parent="14" name="DEPARTMENT_NAME">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="160" parent="14" name="POSITION_TYPE_NAME">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <index id="161" parent="14" name="RECRUITMENT_ID_PK">
+        <object-id>20964</object-id>
+        <created-timestamp>2018-03-20.13:27:42</created-timestamp>
+        <modified-timestamp>2018-03-20.13:27:42</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="162" parent="14" name="RECRUITMENT_ID_PK">
+        <modified-timestamp>2018-03-20.13:27:42</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>RECRUITMENT_ID_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="163" parent="14" name="DETAILS_RECRUITMENT_PK">
+        <modified-timestamp>2018-03-20.13:27:06</modified-timestamp>
+        <columns>POSITION_DETAILS_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.POSITION_DETAILS.SYS_C007244</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="164" parent="15" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="165" parent="15" name="BASE_INFO_ID">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="166" parent="15" name="RESUME_NAME">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="167" parent="15" name="JOB_EXPERIENCE">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="168" parent="15" name="EDUCATION_BACKGROUND">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="169" parent="15" name="EVALUATION">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="170" parent="15" name="RESUME_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="171" parent="15" name="RESUME_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="172" parent="15" name="SALARY_EXCEPTION">
+        <data-type>NUMBER(11,2)</data-type>
+      </column>
+      <column id="173" parent="15" name="JOB_CATEGORY">
+        <data-type>VARCHAR2(100)</data-type>
+      </column>
+      <column id="174" parent="15" name="SEEKING_STATUS">
+        <data-type>VARCHAR2(100)</data-type>
+      </column>
+      <column id="175" parent="15" name="REAL_NAME">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="176" parent="15" name="ID_CARD">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="177" parent="15" name="SEX">
+        <data-type>VARCHAR2(100)</data-type>
+      </column>
+      <column id="178" parent="15" name="AGE">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="179" parent="15" name="EMAIL">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="180" parent="15" name="PHONE">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="181" parent="15" name="VISITOR_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <index id="182" parent="15" name="RESUME_PK">
+        <object-id>20660</object-id>
+        <created-timestamp>2018-03-13.16:52:08</created-timestamp>
+        <modified-timestamp>2018-03-13.16:52:08</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="183" parent="15" name="RESUME_PK">
+        <modified-timestamp>2018-03-13.16:52:08</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>RESUME_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="184" parent="15" name="BASE_INFO_RESUME_PK">
+        <modified-timestamp>2018-03-13.19:35:19</modified-timestamp>
+        <columns>BASE_INFO_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.BASE_INFO.BASE_INFO_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="185" parent="15" name="RESUME_VISITOR_PK">
+        <modified-timestamp>2018-03-22.13:00:50</modified-timestamp>
+        <columns>VISITOR_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.VISITOR.USER_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="186" parent="16" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="187" parent="16" name="REWARDS_TITLE">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="188" parent="16" name="REWARDS_CONTENT">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="189" parent="16" name="REWARDS_MONEY">
+        <data-type>NUMBER(11,2)</data-type>
+      </column>
+      <column id="190" parent="16" name="REWARDS_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="191" parent="16" name="REWARDS_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="192" parent="16" name="EMPLOYEE_ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <index id="193" parent="16" name="REWARDS_PK">
+        <object-id>20656</object-id>
+        <created-timestamp>2018-03-13.16:44:25</created-timestamp>
+        <modified-timestamp>2018-03-13.16:44:25</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="194" parent="16" name="REWARDS_PK">
+        <modified-timestamp>2018-03-13.16:44:25</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>REWARDS_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="195" parent="16" name="EMPLOYEE_ID_REWARDS_PK">
+        <modified-timestamp>2018-03-24.15:43:12</modified-timestamp>
+        <columns>EMPLOYEE_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.EMPLOYEE.EMPLOYEE_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="196" parent="17" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="197" parent="17" name="EMPLOYEE_ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="198" parent="17" name="BASE_SALARY">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11,2)</data-type>
+      </column>
+      <column id="199" parent="17" name="FIVE_INSURANCE_PAYMENT">
+        <data-type>NUMBER(11,2)</data-type>
+      </column>
+      <column id="200" parent="17" name="ATTENDANCE_DAYS">
+        <data-type>NUMBER(11,2)</data-type>
+      </column>
+      <column id="201" parent="17" name="SALARY_STATUS">
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="202" parent="17" name="SALARY_INFO">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="203" parent="17" name="SALARY_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="204" parent="17" name="SALARY_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="205" parent="17" name="TOTAL_SALARY">
+        <data-type>NUMBER(11,2)</data-type>
+      </column>
+      <column id="206" parent="17" name="RELEASE_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="207" parent="17" name="REWARDS_MONEY">
+        <data-type>NUMBER(11,2)</data-type>
+      </column>
+      <index id="208" parent="17" name="SALARY_PK">
+        <object-id>20658</object-id>
+        <created-timestamp>2018-03-13.16:48:21</created-timestamp>
+        <modified-timestamp>2018-03-13.16:48:21</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="209" parent="17" name="SALARY_PK">
+        <modified-timestamp>2018-03-13.16:48:21</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>SALARY_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="210" parent="17" name="EMPLOYEE_ID_SALARY_PK">
+        <modified-timestamp>2018-03-24.15:46:56</modified-timestamp>
+        <columns>EMPLOYEE_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.EMPLOYEE.EMPLOYEE_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="211" parent="18" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="212" parent="18" name="TRAIN_TITLE">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="213" parent="18" name="TRAIN_CONTENT">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="214" parent="18" name="TRAIN_ADDRESS">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="215" parent="18" name="TRAIN_TIME">
+        <data-type>VARCHAR2(255)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="216" parent="18" name="TRAIN_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="217" parent="18" name="TRAIN_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="218" parent="18" name="TRAIN_PEOPLE">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="219" parent="18" name="EMPLOYEE_NEWS_ID">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <index id="220" parent="18" name="TRAIN_PK">
+        <object-id>20650</object-id>
+        <created-timestamp>2018-03-13.16:33:43</created-timestamp>
+        <modified-timestamp>2018-03-13.16:33:43</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="221" parent="18" name="TRAIN_PK">
+        <modified-timestamp>2018-03-13.16:33:43</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>TRAIN_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="222" parent="18" name="TRAIN_EMPLOYEE_NEWS_PK">
+        <modified-timestamp>2018-03-23.20:33:40</modified-timestamp>
+        <columns>EMPLOYEE_NEWS_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.EMPLOYEE_NEWS.EMPLOYEE_NEWS_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="223" parent="19" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="224" parent="19" name="TRAIN_ID">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="225" parent="19" name="EMPLOYEE_ID">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="226" parent="19" name="ATTEND_NUMBER">
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="227" parent="19" name="TRAIN_RECORD_INFO">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="228" parent="19" name="TRAIN_RECORD_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="229" parent="19" name="TRAIN_RECORD_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <index id="230" parent="19" name="TRAIN_RECORD_PK">
+        <object-id>20652</object-id>
+        <created-timestamp>2018-03-13.16:38:05</created-timestamp>
+        <modified-timestamp>2018-03-13.16:38:05</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="231" parent="19" name="TRAIN_RECORD_PK">
+        <modified-timestamp>2018-03-13.16:38:05</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>TRAIN_RECORD_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="232" parent="19" name="TRAIN_RECORD_ID_PK">
+        <modified-timestamp>2018-03-13.19:31:20</modified-timestamp>
+        <columns>TRAIN_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.TRAIN.TRAIN_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="233" parent="19" name="TRAIN_RECORD_EMPLOYEE_PK">
+        <modified-timestamp>2018-03-13.19:31:49</modified-timestamp>
+        <columns>EMPLOYEE_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.TRAIN.TRAIN_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="234" parent="20" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="235" parent="20" name="VISITOR_NAME">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="236" parent="20" name="VISITOR_PASSWORD">
+        <mandatory>1</mandatory>
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="237" parent="20" name="BASE_INFO_ID">
+        <data-type>NUMBER(11)</data-type>
+        <default-expression>NULL</default-expression>
+      </column>
+      <column id="238" parent="20" name="VISITOR_STATUS">
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="239" parent="20" name="VISITOR_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="240" parent="20" name="VISITOR_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <column id="241" parent="20" name="VISITOR_PHONE">
+        <data-type>VARCHAR2(100)</data-type>
+      </column>
+      <column id="242" parent="20" name="VISITOR_EMAIL">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <index id="243" parent="20" name="USER_PK">
+        <object-id>20634</object-id>
+        <created-timestamp>2018-03-13.15:35:53</created-timestamp>
+        <modified-timestamp>2018-03-13.15:35:53</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="244" parent="20" name="USER_PK">
+        <modified-timestamp>2018-03-13.15:35:53</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>USER_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="245" parent="20" name="BASE_INFO_ID_PK">
+        <modified-timestamp>2018-03-13.19:23:25</modified-timestamp>
+        <columns>BASE_INFO_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.BASE_INFO.BASE_INFO_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="246" parent="21" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="247" parent="21" name="VISITOR_ID">
+        <mandatory>1</mandatory>
+        <data-type>NUMBER(11)</data-type>
+      </column>
+      <column id="248" parent="21" name="VISITOR_NEWS_TITLE">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="249" parent="21" name="VISITOR_NEWS_CONTENT">
+        <data-type>VARCHAR2(255)</data-type>
+      </column>
+      <column id="250" parent="21" name="VISITOR_NEWS_STATUS">
+        <data-type>NUMBER(2)</data-type>
+        <default-expression>0</default-expression>
+      </column>
+      <column id="251" parent="21" name="VISITOR_NEWS_CREATE_TIME">
+        <data-type>DATE</data-type>
+        <default-expression>sysdate</default-expression>
+      </column>
+      <column id="252" parent="21" name="VISITOR_NEWS_MODIFIED_TIME">
+        <data-type>DATE</data-type>
+      </column>
+      <index id="253" parent="21" name="VISITOR_NEWS_PK">
+        <object-id>20664</object-id>
+        <created-timestamp>2018-03-13.16:58:37</created-timestamp>
+        <modified-timestamp>2018-03-13.16:58:37</modified-timestamp>
+        <columns>ID</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <tablespace-name>SYSTEM</tablespace-name>
+      </index>
+      <key id="254" parent="21" name="VISITOR_NEWS_PK">
+        <modified-timestamp>2018-03-13.16:58:37</modified-timestamp>
+        <columns>ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <underlying-index>VISITOR_NEWS_PK</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="255" parent="21" name="VISITOR_ID_NEWS_PK">
+        <modified-timestamp>2018-03-13.19:38:11</modified-timestamp>
+        <columns>VISITOR_ID</columns>
+        <initially-deferred>1</initially-deferred>
+        <ref-key>~.VISITOR.USER_PK</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+</component>

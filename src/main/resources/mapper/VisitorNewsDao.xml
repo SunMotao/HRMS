@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.VisitorNewsDao">
+<resultMap id="visitorNewsMap" type="VisitorNews">
+    <id column="id" property="id"></id>
+    <result column="VISITOR_ID" property="visitorId"></result>
+    <result column="VISITOR_NEWS_TITLE" property="visitorNewsTitle"></result>
+    <result column="VISITOR_NEWS_CONTENT" property="visitorNewsContent"></result>
+    <result column="VISITOR_NEWS_STATUS" property="visitorNewsStatus"></result>
+    <result column="VISITOR_NEWS_CREATE_TIME" property="visitorNewsCreateTime"></result>
+    <result column="VISITOR_NEWS_MODIFIED_TIME" property="visitorNewsModifiedTime"></result>
+</resultMap>
+    <insert id="addVisitorNews" parameterType="VisitorNews">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO VISITOR_NEWS
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="visitorId!=null">VISITOR_ID,</if>
+            <if test="visitorNewsTitle!=null">VISITOR_NEWS_TITLE,</if>
+            <if test="visitorNewsContent!=null">VISITOR_NEWS_CONTENT,</if>
+            <if test="visitorNewsStatus!=null">VISITOR_NEWS_STATUS,</if>
+            <if test="visitorNewsCreateTime!=null">VISITOR_NEWS_CREATE_TIME,</if>
+            <if test="visitorNewsModifiedTime!=null">VISITOR_NEWS_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix=" VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="visitorId!=null">#{visitorId},</if>
+            <if test="visitorNewsTitle!=null">#{visitorNewsTitle},</if>
+            <if test="visitorNewsContent!=null">#{visitorNewsContent},</if>
+            <if test="visitorNewsStatus!=null">#{visitorNewsStatus},</if>
+            <if test="visitorNewsCreateTime!=null">#{visitorNewsCreateTime},</if>
+            <if test="visitorNewsModifiedTime!=null">#{visitorNewsModifiedTime}</if>
+        </trim>
+    </insert>
+
+    <select id="queryNoReadVisitorNews" parameterType="int" resultMap="visitorNewsMap">
+        SELECT * FROM VISITOR_NEWS WHERE VISITOR_NEWS_STATUS=#{value}
+    </select>
+
+
+</mapper>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.VisitorDao">
+    <resultMap id="visitorMap" type="Visitor">
+        <id column="id" property="id"></id>
+        <result column="BASE_INFO_ID" property="baseInfoId"></result>
+        <result column="VISITOR_NAME" property="visitorName"></result>
+        <result column="VISITOR_PASSWORD" property="visitorPassword"></result>
+        <result column="VISITOR_STATUS" property="visitorStatus"></result>
+        <result column="VISITOR_CREATE_TIME" property="visitorCreateTime"></result>
+        <result column="VISITOR_MODIFIED_TIME" property="visitorModifiedTime"></result>
+        <result column="VISITOR_PHONE" property="visitorPhone"></result>
+        <result column="VISITOR_EMAIL" property="visitorEmail"></result>
+    </resultMap>
+
+    <select id="visitorLogin" parameterType="Visitor" resultMap="visitorMap">
+        SELECT * FROM visitor
+        <where>
+            <choose>
+                <when test="visitorName!=null and visitorPassword!=null">
+                    AND  VISITOR_NAME=#{visitorName}
+                    AND VISITOR_PASSWORD=#{visitorPassword}
+                </when>
+                <otherwise>
+                    AND 1=2
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <select id="queryVisitorByName" parameterType="Visitor" resultMap="visitorMap">
+        SELECT VISITOR_NAME FROM visitor
+        <where>
+            <choose>
+                <when test="visitorName!=null">
+                    AND  VISITOR_NAME=#{visitorName}
+                </when>
+                <otherwise>
+                    AND 1=2
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <insert id="visitorRegister" parameterType="Visitor">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+
+        INSERT INTO HRMS.VISITOR
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="baseInfoId!=null">BASE_INFO_ID,</if>
+            <if test="visitorName!=null">VISITOR_NAME,</if>
+            <if test="visitorPassword!=null">VISITOR_PASSWORD,</if>
+            <if test="visitorStatus!=null">VISITOR_STATUS,</if>
+            <if test="visitorCreateTime!=null">VISITOR_CREATE_TIME,</if>
+            <if test="visitorModifiedTime!=null">VISITOR_MODIFIED_TIME,</if>
+            <if test="visitorPhone!=null">VISITOR_PHONE,</if>
+            <if test="visitorEmail!=null">VISITOR_EMAIL</if>
+        </trim>
+        <trim prefix=" VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="baseInfoId!=null">#{baseInfoId},</if>
+            <if test="visitorName!=null">#{visitorName},</if>
+            <if test="visitorPassword!=null">#{visitorPassword},</if>
+            <if test="visitorStatus!=null">#{visitorStatus},</if>
+            <if test="visitorCreateTime!=null">#{visitorCreateTime},</if>
+            <if test="visitorModifiedTime!=null">#{visitorModifiedTime},</if>
+            <if test="visitorPhone!=null">#{visitorPhone},</if>
+            <if test="visitorEmail!=null">#{visitorEmail}</if>
+        </trim>
+    </insert>
+
+    <update id="visitorApplyPass" parameterType="int" >
+        UPDATE VISITOR SET VISITOR_STATUS=#{value}
+    </update>
+
+    <update id="visitorApplyWaive" parameterType="int" >
+        UPDATE VISITOR SET VISITOR_STATUS=#{value}
+    </update>
+
+    <!--<update id="updateVisitor" parameterType="Visitor">-->
+        <!--UPDATE visitor SET-->
+        <!--<trim>-->
+            <!--<trim suffixOverrides=",">-->
+                <!--<if test="id!=null">#{id},</if>-->
+                <!--<if test="baseInfoId!=null">#{baseInfoId},</if>-->
+                <!--<if test="visitorName!=null">#{visitorName},</if>-->
+                <!--<if test="visitorPassword!=null">#{visitorPassword},</if>-->
+                <!--<if test="visitorStatus!=null">#{visitorStatus},</if>-->
+                <!--<if test="visitorCreateTime!=null">#{visitorCreateTime},</if>-->
+                <!--<if test="visitorModifiedTime!=null">#{visitorModifiedTime},</if>-->
+                <!--<if test="visitorPhone!=null">#{visitorPhone},</if>-->
+                <!--<if test="visitorEmail!=null">#{visitorEmail}</if>-->
+            <!--</trim>-->
+        <!--</trim>-->
+    <!--</update>-->
+</mapper>

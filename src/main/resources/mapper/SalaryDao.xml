@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.SalaryDao">
+    <resultMap id="salaryMap" type="Salary">
+        <id column="id" property="id"></id>
+        <result column="EMPLOYEE_ID" property="employeeId"></result>
+        <result column="BASE_SALARY" property="baseSalary"></result>
+        <result column="FIVE_INSURANCE_PAYMENT" property="fiveInsurancePayment"></result>
+        <result column="REWARDS_MONEY" property="rewardsMoney"></result>
+        <result column="ATTENDANCE_DAYS" property="attendanceDays"></result>
+        <result column="SALARY_SATUS" property="salaryStatus"></result>
+        <result column="SALARY_INFO" property="salaryInfo"></result>
+        <result column="TOTAL_SALARY" property="totalSalary"></result>
+        <result column="RELEASE_TIME" property="releaseTime"></result>
+        <result column="SALARY_CREATE_TIME" property="salaryCreateTime"></result>
+        <result column="SALARY_MODIFIED_TIME" property="salaryModifiedTime"></result>
+    </resultMap>
+
+    <insert id="addSalary" parameterType="Salary">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.SALARY
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="employeeId!=null">EMPLOYEE_ID,</if>
+            <if test="baseSalary!=null">BASE_SALARY,</if>
+            <if test="fiveInsurancePayment!=null">FIVE_INSURANCE_PAYMENT,</if>
+            <if test="rewardsMoney!=null">REWARDS_MONEY,</if>
+            <if test="attendanceDays!=null">ATTENDANCE_DAYS,</if>
+            <if test="salaryStatus!=null">SALARY_SATUS,</if>
+            <if test="salaryInfo!=null">SALARY_INFO,</if>
+            <if test="totalSalary!=null">TOTAL_SALARY,</if>
+            <if test="releaseTime!=null">RELEASE_TIME,</if>
+            <if test="salaryCreateTime!=null">SALARY_CREATE_TIME,</if>
+            <if test="salaryModifiedTime!=null">SALARY_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="employeeId!=null">#{employeeId},</if>
+            <if test="baseSalary!=null">#{baseSalary},</if>
+            <if test="fiveInsurancePayment!=null">#{fiveInsurancePayment},</if>
+            <if test="rewardsMoney!=null">#{rewardsMoney},</if>
+            <if test="attendanceDays!=null">#{attendanceDays},</if>
+            <if test="salaryStatus!=null">#{salaryStatus},</if>
+            <if test="salaryInfo!=null">#{salaryInfo},</if>
+            <if test="totalSalary!=null">#{totalSalary},</if>
+            <if test="releaseTime!=null">#{releaseTime},</if>
+            <if test="salaryCreateTime!=null">#{salaryCreateTime},</if>
+            <if test="salaryModifiedTime!=null">#{salaryModifiedTime}</if>
+        </trim>
+    </insert>
+
+    <select id="querySalaryBySortTime" resultMap="salaryMap">
+        SELECT * FROM SALARY ORDER BY SALARY_CREATE_TIME DESC
+    </select>
+
+
+
+</mapper>

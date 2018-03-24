@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.dao.PositionDao">
+    <resultMap id="positionMap" type="Position">
+        <id column="id" property="id"></id>
+        <result column="POSITION_TYPE_ID" property="positionTypeId"></result>
+        <result column="POSITION_NAME" property="positionName"></result>
+        <result column="POSITION_INFO" property="positionInfo"></result>
+        <result column="POSITION_STATUS" property="positionStatus"></result>
+        <result column="POSITION_CREATE_TIME" property="positionCreateTime"></result>
+        <result column="POSITION_MODIFIED_TIME" property="positionModifiedTime"></result>
+    </resultMap>
+
+    <insert id="addPosition" parameterType="Position">
+        <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
+            SELECT HRMS.HRMS_SEQ.nextval FROM dual
+        </selectKey>
+        INSERT INTO HRMS.POSITION
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id!=null">ID,</if>
+            <if test="positionTypeId!=null">POSITION_TYPE_ID,</if>
+            <if test="positionName!=null">POSITION_NAME,</if>
+            <if test="positionInfo!=null">POSITION_INFO,</if>
+            <if test="positionStatus!=null">POSITION_STATUS,</if>
+            <if test="positionCreateTime!=null">POSITION_CREATE_TIME,</if>
+            <if test="positionModifiedTime!=null">POSITION_MODIFIED_TIME</if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="id!=null">#{id},</if>
+            <if test="positionTypeId!=null">#{positionTypeId},</if>
+            <if test="positionName!=null">#{positionName},</if>
+            <if test="positionInfo!=null">#{positionInfo},</if>
+            <if test="positionCreateTime!=null">#{positionCreateTime},</if>
+            <if test="positionModifiedTime!=null">#{positionModifiedTime},</if>
+            <if test="positionStatus!=null">#{positionStatus}</if>
+        </trim>
+    </insert>
+
+    <select id="queryAllPosition" parameterType="List" resultMap="positionMap">
+        SELECT * FROM position
+    </select>
+
+    <select id="queryPositionByName" parameterType="Position" resultMap="positionMap">
+        SELECT * FROM position WHERE POSITION_NAME=#{positionName}
+    </select>
+
+</mapper>
