@@ -49,21 +49,23 @@
             <if test="photo!=null">#{photo}</if>
         </trim>
     </insert>
-
+<sql id="updateAll">
+    <trim suffixOverrides=",">
+        <if test="realName!=null">REAL_NAME=#{realName},</if>
+        <if test="sex!=null">SEX=#{sex},</if>
+        <if test="age!=null">AGE=#{age},</if>
+        <if test="nation!=null">NATION=#{nation},</if>
+        <if test="family!=null">FAMILY=#{family},</if>
+        <if test="address!=null">ADDRESS=#{address},</if>
+        <if test="identityCard!=null">IDENTITY_CARD=#{identityCard},</if>
+        <if test="baseInfoCreateTime!=null">BASE_INFO_CREATE_TIME=#{baseInfoCreateTime},</if>
+        <if test="baseInfoModifiedTime!=null">BASE_INFO_MODIFIED_TIME=#{baseInfoModifiedTime},</if>
+        <if test="photo!=null">PHOTO=#{photo}</if>
+    </trim>
+</sql>
         <update id="updateBaseInfo" parameterType="BaseInfo">
             UPDATE BASE_INFO SET
-            <trim suffixOverrides=",">
-                <if test="realName!=null">REAL_NAME=#{realName},</if>
-                <if test="sex!=null">SEX=#{sex},</if>
-                <if test="age!=null">AGE=#{age},</if>
-                <if test="nation!=null">NATION=#{nation},</if>
-                <if test="family!=null">FAMILY=#{family},</if>
-                <if test="address!=null">ADDRESS=#{address},</if>
-                <if test="identityCard!=null">IDENTITY_CARD=#{identityCard},</if>
-                <if test="baseInfoCreateTime!=null">BASE_INFO_CREATE_TIME=#{baseInfoCreateTime},</if>
-                <if test="baseInfoModifiedTime!=null">BASE_INFO_MODIFIED_TIME=#{baseInfoModifiedTime},</if>
-                <if test="photo!=null">PHOTO=#{photo}</if>
-            </trim>
+           <include refid="updateAll"></include>
             <where>
                 <choose>
                     <when test="id!=null">
@@ -75,4 +77,13 @@
                 </choose>
             </where>
         </update>
+    <update id="updateEmployeeBaseInfo" parameterType="BaseInfo">
+        UPDATE BASE_INFO SET
+        <include refid="updateAll"></include> WHERE id=#{value}
+    </update>
+
+    <select id="queryBaseInfoById" parameterType="int" resultMap="baseInfoMap">
+        SELECT * FROM BASE_INFO WHERE ID=#{value}
+    </select>
+
 </mapper>

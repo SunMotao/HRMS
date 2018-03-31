@@ -5,38 +5,41 @@
 <head>
     <base href="<%= basePath%>">
 
-    <title>首页</title>
+    <title>PositionManager</title>
     <link href="/styles/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/jquery-3.3.1.min.js"></script>
     <script src="/scripts/ajax.js"></script>
+    <link href="/styles/sidebar.css" rel="stylesheet" type="text/css">
+    <script src="/scripts/prefixfree.min.js"></script>
+    <link href="/styles/col-12.css" rel="stylesheet">
     <script>
-        var mydate;
         function addPosition() {
             var positionTypeId=prompt("请输入职位类型编号",0);
             var positionName=prompt("请输入职位名称",0);
             var positionInfo=prompt("请输入职位描述",0);
-            ajax("get","position/addPosition.do",{"positionTypeId":positionTypeId,"positionName":positionName,"positionInfo":positionInfo},true,function (date,readyState,status) {
-                if (readyState == 4 && status == 200) {
-                    mydate = data;
-                    showAddPosition();
+            $.ajax({
+                url:"position/addPosition.do",
+                data:{"positionTypeId":positionTypeId,"positionName":positionName,"positionInfo":positionInfo},
+                success:function (data) {
+                    alert(data)
                 }
             });
         }
-        function showAddPosition(){
-            if(mydate=="isExisted"){
-                v_name.innerHTML="该用户已被注册";
-                return  false;
-            }
-            if(mydate=="notExisted"){
-                v_name.innerHTML="该用户名可用";
-                return  true;
-            }
+        function deletePosition(positionId) {
+            $.ajax({
+                url:"position/deletePosition.do",
+                data:{"id":positionId},
+                success:function (data) {
+                    alert(data)
+                }
+            });
         }
     </script>
 </head>
 <body>
+<jsp:include page="../admin/adminTop.jsp"></jsp:include>
 <div id="alert"></div>
 <div class="container">
     <div class="row">
@@ -69,8 +72,7 @@
                         <td><c:out value="${position.positionStatus}"></c:out></td>
                         <td><c:out value="${position.positionCreateTime}"></c:out></td>
                         <td><c:out value="${position.positionModifiedTime}"></c:out></td>
-                        <td><button class="btn  btn-danger" onclick="deleteProduct(${product.id},this)">更新部门信息</button></td>
-                        <td><button class="btn btn-primary" onclick="addPositionType(${product.id},this)">添加职位类型</button></td>
+                        <td><button class="btn  btn-danger" onclick="deletePosition(${position.id},this)">删除</button></td>
                     </tr>
                 </c:forEach>
 

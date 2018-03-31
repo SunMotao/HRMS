@@ -56,4 +56,7 @@
         SELECT * FROM ATTENDANCE WNHERE
     </select>
 
+    <select id="queryAllAttendanceByTimeSort" resultMap="attendanceMap">
+        SELECT * FROM ATTENDANCE ORDER BY ATTENDANCE_CREATE_TIME DESC
+    </select>
 </mapper>

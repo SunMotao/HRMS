@@ -5,7 +5,7 @@
 <mapper namespace="com.sxt.dao.EmployeeNewsDao">
     <resultMap id="employeeNewsMap" type="EmployeeNews">
         <id column="id" property="id"></id>
-        <result column="EMPLOYEE_ID" property="employeeId"></result>
+        <result column="INFO_ID" property="infoId"></result>
         <result column="EMPLOYEE_NEWS_TITLE" property="employeeNewsTitle"></result>
         <result column="EMPLOYEE_NEWS_CONTENT" property="employeeNewsContent"></result>
         <result column="EMPLOYEE_NEWS_STATUS" property="employeeNewsStatus"></result>
@@ -19,7 +19,7 @@
         INSERT INTO EMPLOYEE_NEWS
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id!=null">ID,</if>
-            <if test="vemployeeId!=null">EMPLOYEE_ID,</if>
+            <if test="infoId!=null">INFO_ID,</if>
             <if test="employeeNewsTitle!=null">EMPLOYEE_NEWS_TITLE,</if>
             <if test="employeeNewsContent!=null">EMPLOYEE_NEWS_CONTENT,</if>
             <if test="employeeNewsStatus!=null">EMPLOYEE_NEWS_STATUS,</if>
@@ -28,7 +28,7 @@
         </trim>
         <trim prefix=" VALUES (" suffix=")" suffixOverrides=",">
             <if test="id!=null">#{id},</if>
-            <if test="vemployeeId!=null">#{vemployeeId},</if>
+            <if test="infoId!=null">#{infoId},</if>
             <if test="employeeNewsTitle!=null">#{employeeNewsTitle},</if>
             <if test="employeeNewsContent!=null">#{employeeNewsContent},</if>
             <if test="employeeNewsStatus!=null">#{employeeNewsStatus},</if>

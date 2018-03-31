@@ -17,7 +17,7 @@
         <selectKey resultType="java.lang.Integer" order="BEFORE" keyProperty="id">
             SELECT HRMS.HRMS_SEQ.nextval FROM dual
         </selectKey>
-        INSERT INTO HRMS.TRAIN_RECORD
+        INSERT INTO TRAIN_RECORD
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id!=null">ID,</if>
             <if test="trainId!=null">TRAIN_ID,</if>
@@ -37,4 +37,10 @@
             <if test="trainRecordModifiedTime!=null">#{trainRecordModifiedTime}</if>
         </trim>
     </insert>
+
+    <update id="employeeTrainSignOut" parameterType="TrainRecord">
+        UPDATE TRAIN_RECORD SET TRAIN_RECORD_MODIFIED_TIME=#{trainRecordModifiedTime} WHERE ID=#{id}
+    </update>
+
+
 </mapper>

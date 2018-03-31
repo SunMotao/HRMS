@@ -5,6 +5,7 @@
 <mapper namespace="com.sxt.dao.TrainDao">
     <resultMap id="trainMap" type="Train">
         <id column="id" property="id"></id>
+        <result column="INFO_ID" property="infoId"></result>
         <result column="EMPLOYEE_NEWS_ID" property="employeeNewsId"></result>
         <result column="TRAIN_TITLE" property="trainTitle"></result>
         <result column="TRAIN_CONTENT" property="trainContent"></result>
@@ -22,6 +23,7 @@
         INSERT INTO HRMS.TRAIN
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id!=null">ID,</if>
+            <if test="infoId!=null">INFO_ID,</if>
             <if test="employeeNewsId!=null">EMPLOYEE_NEWS_ID,</if>
             <if test="trainTitle!=null">TRAIN_TITLE,</if>
             <if test="trainContent!=null">TRAIN_CONTENT,</if>
@@ -33,6 +35,7 @@
         </trim>
         <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
             <if test="id!=null">#{id},</if>
+            <if test="infoId!=null">#{infoId},</if>
             <if test="employeeNewsId!=null">#{employeeNewsId},</if>
             <if test="trainTitle!=null">#{trainTitle},</if>
             <if test="trainContent!=null">#{trainContent},</if>
@@ -46,6 +49,10 @@
 
     <select id="queryAllTrainByTimeSort" resultMap="trainMap">
         SELECT * FROM TRAIN ORDER BY TRAIN_CREATE_TIME DESC
+    </select>
+
+    <select id="queryTrainByCreateTime" resultMap="trainMap">
+       select tan.* from (select t.*,ROWNUM RN from TRAIN t order by TRAIN_CREATE_TIME) tan where tan.RN=1
     </select>
 
     <update id="updateEmployeeNewsId" parameterType="int">

@@ -14,6 +14,7 @@
         <result column="HIRE_TIME" property="hireTime"></result>
         <result column="EMPLOYEE_PHONE" property="employeePhone"></result>
         <result column="EMPLOYEE_EMAIL" property="employeeEmail"></result>
+        <result column="BASE_SALARY" property="baseSalary"></result>
         <result column="EMPLOYEE_CREATE_TIME" property="employeeCreateTime"></result>
         <result column="EMPLOYEE_MODIFIED_TIME" property="employeeModifiedTime"></result>
     </resultMap>
@@ -33,6 +34,7 @@
             <if test="hireTime!=null">HIRE_TIME,</if>
             <if test="employeePhone!=null">EMPLOYEE_PHONE,</if>
             <if test="employeeEmail!=null">EMPLOYEE_EMAIL,</if>
+            <if test="baseSalary!=null">BASE_SALARY,</if>
             <if test="employeeCreateTime!=null">EMPLOYEE_CREATE_TIME,</if>
             <if test="employeeModifiedTime!=null">EMPLOYEE_MODIFIED_TIME</if>
         </trim>
@@ -47,6 +49,7 @@
             <if test="hireTime!=null">#{hireTime},</if>
             <if test="employeePhone!=null">#{employeePhone},</if>
             <if test="employeeEmail!=null">#{employeeEmail},</if>
+            <if test="baseSalary!=null">#{baseSalary},</if>
             <if test="employeeCreateTime!=null">#{employeeCreateTime},</if>
             <if test="employeeModifiedTime!=null">#{employeeModifiedTime}</if>
         </trim>
@@ -57,9 +60,7 @@
     </update>
 
     <select id="queryEmployeeByTimeSort" resultMap="employeeMap">
-        select * from
-        (select EMPLOYEE.*,row_number() over (order by HIRE_TIME desc) rn from EMPLOYEE)
-        where rn&lt;=5;
+        select * from EMPLOYEE ORDER BY EMPLOYEE_CREATE_TIME DESC
     </select>
 
     <select id="employeeLogin" parameterType="Employee" resultMap="employeeMap">
@@ -69,5 +70,10 @@
     <update id="updateNameAndPasswordByEmployee" parameterType="Employee">
         UPDATE EMPLOYEE SET EMPLOYEE_NAME=#{employeeName},EMPLOYEE_PASSWORD=#{employeePassword} WHERE ID=#{id}
     </update>
+
+
+    <select id="queryEmployeeBaseSalaryById" parameterType="int" resultMap="employeeMap">
+        SELECT * FROM EMPLOYEE WHERE ID=#{value}
+    </select>
 
 </mapper>

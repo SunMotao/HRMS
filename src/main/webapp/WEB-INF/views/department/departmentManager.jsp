@@ -5,52 +5,38 @@
 <head>
     <base href="<%= basePath%>">
 
-    <title>首页</title>
+    <title>DepartmentManager</title>
     <link href="/styles/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/jquery-3.3.1.min.js"></script>
-    <script src="/scripts/ajax.js"></script>
-    <script src="/scripts/alert.js"></script>
+    <link href="/styles/sidebar.css" rel="stylesheet" type="text/css">
+    <script src="/scripts/prefixfree.min.js"></script>
+    <link href="/styles/col-12.css" rel="stylesheet">
     <script>
-        var mydate;
-        var alt;
-        window.onload=function () {
-            alt=document.getElementById("alert");
-        }
-
         function addDepartment() {
             var departmentName=prompt("请输入部门名称",0);
-            ajax("get","department/addDepartment.do",{"departmentName":departmentName},true,function (date,readyState,status) {
-                if (readyState == 4 && status == 200) {
-                    mydate = date;
-                    console.log(mydate);
-                    showAddDepartment();
+            $.ajax({
+                url:"department/addDepartment.do",
+                data:{"departmentName":departmentName},
+                success:function (data) {
+                    alert(data)
                 }
             });
         }
-        function showAddDepartment(){
-            if(mydate=="success"){
-                alt.innerHTML="添加成功";
-            }
-            if(mydate=="default"){
-                alt.innerHTML="添加失败";
-            }
-            hideAlert(alt);
+        function deleteDepartment(departmentId) {
+            $.ajax({
+                url:"department/deleteDepartment.do",
+                data:{"id":departmentId},
+                success:function (data) {
+                    alert(data)
+                }
+            });
         }
     </script>
-    <style>
-        #alert{
-            position: absolute;
-            z-index: 1001;
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
-<%--<jsp:include page="adminTop.jsp"></jsp:include>--%>
-<div id="alert" ></div>
-
+<jsp:include page="../admin/adminTop.jsp"></jsp:include>
 <div class="container">
     <div class="row">
         <div class="col-md-12" id="content">
@@ -79,7 +65,7 @@
                         <td><c:out value="${department.departmentStatus}"></c:out></td>
                         <td><c:out value="${department.departmentCreateTime}"></c:out></td>
                         <td><c:out value="${department.departmentModifiedTime}"></c:out></td>
-                        <td><button class="btn  btn-danger" onclick="deleteProduct(${product.id},this)">更新部门信息</button></td>
+                        <td><button class="btn  btn-danger" onclick="deleteDepartment(${department.id},this)">删除</button></td>
                     </tr>
                 </c:forEach>
 

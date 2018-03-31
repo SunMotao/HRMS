@@ -74,7 +74,7 @@
     <aop:config>
         <!--横切关注点-->
         <aop:pointcut id="interceptorPointCuts" expression="execution(* com.sxt.service.impl..*.*(..))"></aop:pointcut>
-       <!--<通知-->
+        <!--<通知-->
         <aop:advisor advice-ref="transactionAdvice" pointcut-ref="interceptorPointCuts"></aop:advisor>
     </aop:config>
 
@@ -84,20 +84,21 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
-<!--<bean id="customer" class="com.sxt.po.CustomerDao">-->
-            <!--<property name="customerName" value="sxt"></property>-->
+<!--<bean id="customer" class="com.com.com.com.com.sxt.po.CustomerDao">-->
+            <!--<property name="customerName" value="com.com.com.com.sxt"></property>-->
             <!--<property name="customerPassword" value="123456"></property>-->
         <!--</bean>-->
 
-        <!--<bean id="customerDao" class="com.sxt.dao.impl.CustomerDaoImpl1"></bean>-->
-        <!--<bean id="customerService" class="com.sxt.service.impl.CustomerServiceImpl">-->
+        <!--<bean id="customerDao" class="com.com.com.com.com.sxt.dao.impl.CustomerDaoImpl1"></bean>-->
+        <!--<bean id="customerService" class="com.com.com.com.com.sxt.service.impl.CustomerServiceImpl">-->
             <!--<property name="customerDao" ref="customerDao"></property>-->
         <!--</bean>-->
 
     <!--资源文件映射-->
-    <mvc:resources mapping="/images/**" location="/images/"/><!--mapping 为使用时的web映射，location表示此种文件在工程中的目录-->
+    <mvc:resources mapping="/images/**" location="/img/"/><!--mapping 为使用时的web映射，location表示此种文件在工程中的目录-->
     <mvc:resources mapping="/scripts/**" location="/js/"/>
     <mvc:resources mapping="/styles/**" location="/css/"/>
+    <mvc:resources mapping="/fonts/**" location="/fonts/"/>
     <mvc:resources mapping="/staticPages/**" location="/page/"/>
 
     <!--配置拦截器-->
@@ -107,12 +108,12 @@
             <!--<mvc:mapping path="/customer/*"/>-->
             <!--<mvc:exclude-mapping path="/**/*login*"></mvc:exclude-mapping> &lt;!&ndash;/**/*login或reg*&ndash;&gt;-->
             <!--<mvc:exclude-mapping path="/**/*reg*"></mvc:exclude-mapping>-->
-            <!--<bean class="com.sxt.filter.SessionHandlerIntercepter"></bean>-->
+            <!--<bean class="com.com.com.com.com.sxt.filter.SessionHandlerIntercepter"></bean>-->
         <!--</mvc:interceptor>-->
         <!--<mvc:interceptor>-->
             <!--<mvc:mapping path="/Admin/*"/>-->
             <!--<mvc:exclude-mapping path="/**/*login*"></mvc:exclude-mapping>-->
-            <!--<bean class="com.sxt.filter.AdminSessionHandlerIntercepter"></bean>-->
+            <!--<bean class="com.com.com.com.com.sxt.filter.AdminSessionHandlerIntercepter"></bean>-->
         <!--</mvc:interceptor>-->
     <!--</mvc:interceptors>-->
 

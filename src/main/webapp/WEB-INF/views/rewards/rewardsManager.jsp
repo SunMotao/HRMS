@@ -4,14 +4,17 @@
 <html>
 <head>
     <base href="<%= basePath%>">
-    <title>首页</title>
+    <title>RewardsManager</title>
     <link href="/styles/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/jquery-3.3.1.min.js"></script>
+    <link href="/styles/sidebar.css" rel="stylesheet" type="text/css">
+    <script src="/scripts/prefixfree.min.js"></script>
+    <link href="/styles/col-12.css" rel="stylesheet">
 </head>
 <body>
-
+<jsp:include page="../admin/adminTop.jsp"></jsp:include>
 <div id="alert"></div>
 <div class="container">
     <div class="row">

@@ -4,13 +4,39 @@
 <html>
 <head>
     <base href="<%= basePath%>">
-    <title>首页</title>
+    <title>AddRewards</title>
     <link href="/styles/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/jquery-3.3.1.min.js"></script>
+    <link href="/styles/sidebar.css" rel="stylesheet" type="text/css">
+    <script src="/scripts/prefixfree.min.js"></script>
+    <link href="/styles/col-12.css" rel="stylesheet">
+    <script src="/scripts/alert.js"></script>
+    <script>
+        window.onload=function () {
+                    var a= document.getElementById("alert");
+                    hideAlert(a);
+                }
+    </script>
+    <style>
+        #alert {
+            position: absolute;
+            z-index: 1100;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+<jsp:include page="../admin/adminTop.jsp"></jsp:include>
+
+<div id="alert">
+    <c:if test="${info!=null}">
+        <div class="alert alert-danger">
+            <c:out value="${info}"></c:out>
+        </div>
+    </c:if>
+</div>
 
 <div class="container">
     <div class="row">
@@ -37,10 +63,10 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2">重置</td>
-                        <td><input type="reset" value="重置"></td>
-                        <td colspan="2">提交</td>
-                        <td><input type="submit" value="提交"></td>
+                        <td >重置</td>
+                        <td colspan="2"><input type="reset" value="重置"></td>
+                        <td >提交</td>
+                        <td colspan="2"><input type="submit" value="提交"></td>
                     </tr>
                 </table>
             </form>

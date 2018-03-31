@@ -39,4 +39,12 @@
         SELECT * FROM DEPARTMENT
     </select>
 
+    <update id="deleteDepartmentById" parameterType="int">
+        UPDATE DEPARTMENT SET DEPARTMENT_STATUS=1 WHERE ID=#{value]}
+    </update>
+
+    <select id="queryDepartmentByStatus" parameterType="int" resultMap="departmentMap">
+        SELECT * FROM DEPARTMENT WHERE DEPARTMENT_STATUS=#{value}
+    </select>
+
 </mapper>

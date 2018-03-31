@@ -5,34 +5,38 @@
 <head>
     <base href="<%= basePath%>">
 
-    <title>首页</title>
+    <title>EmployeeTrainManager</title>
     <link href="/styles/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/jquery-3.3.1.min.js"></script>
-    <script src="/scripts/ajax.js"></script>
+    <link href="/styles/sidebar.css" rel="stylesheet" type="text/css">
+    <script src="/scripts/prefixfree.min.js"></script>
+    <link href="/styles/col-12.css" rel="stylesheet">
     <script>
-        var mydate;
         function signIn(trainId) {
-            ajax("get","employee/trainSignIn.do",{"id":trainId},true,function (data,readyState,status) {
-                if (readyState == 4 && status == 200) {
-                    mydate = data;
-                    showAddPositionType();
+            $.ajax({
+                url:"employee/trainSignIn.do",
+                data:{"id":trainId},
+                success:function (data) {
+                    alert(data);
                 }
-            });
+            })
         }
         function signOut(trainId) {
-            ajax("get","employee/trainSignOut.do",{"id":trainId},true,function (data,readyState,status) {
-                if (readyState == 4 && status == 200) {
-                    mydate = data;
-                    showAddPositionType();
+            $.ajax({
+                url:"employee/trainSignOut.do",
+                data:{"id":trainId},
+                success:function (data) {
+                    alert(data);
                 }
-            });
+            })
         }
+
     </script>
 </head>
 <body>
-<div id="alert"></div>
+<jsp:include page="employeeTop.jsp"></jsp:include>
 <div class="container">
     <div class="row">
         <div class="col-md-12" id="content">
@@ -49,7 +53,7 @@
                     <th>培训地址</th>
                     <th>培训时间</th>
                     <th>培训内容</th>
-                    <th>操作</th>
+                    <th colspan="2">操作</th>
                 </tr>
                 <c:forEach items="${trains}" var="train">
                     <tr>

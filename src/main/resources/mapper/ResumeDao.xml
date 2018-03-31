@@ -72,8 +72,20 @@
     </insert>
 
     <select id="queryIdByVisitorId" parameterType="int" resultMap="resumeMap">
-        SELECT * FROM RESUME WHERE VISITOR_ID=#{value}
+        SELECT * FROM RESUME WHERE VISITOR_ID=#{0} AND ID=#{1}
     </select>
+
+    <select id="queryResumeByVisitor" parameterType="Visitor" resultMap="resumeMap">
+        SELECT * FROM RESUME WHERE VISITOR_ID=#{id}
+    </select>
+
+    <select id="queryByResumeId" parameterType="int" resultMap="resumeMap">
+        SELECT * FROM RESUME WHERE ID=#{value}
+    </select>
+
+    <delete id="deleteResumeById" parameterType="int">
+        DELETE FROM RESUME WHERE ID=#{value}
+    </delete>
 
 
 </mapper>

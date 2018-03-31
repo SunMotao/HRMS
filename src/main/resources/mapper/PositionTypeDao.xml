@@ -60,4 +60,7 @@
         SELECT * FROM position_type WHERE ID=#{id}
     </select>
 
+    <update id="deletePositionTypeById" parameterType="int">
+        UPDATE POSITION_TYPE SET POSITION_TYPE_STATUS=1 WHERE ID=#{id}
+    </update>
 </mapper>

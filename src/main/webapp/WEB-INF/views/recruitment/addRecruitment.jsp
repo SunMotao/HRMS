@@ -1,20 +1,26 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/"; %>
 <html>
 <head>
     <base href="<%= basePath%>">
-
-    <title>首页</title>
+    <title>AddRecruitment</title>
     <link href="/styles/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/jquery-3.3.1.min.js"></script>
+    <link href="/styles/sidebar.css" rel="stylesheet" type="text/css">
+    <script src="/scripts/prefixfree.min.js"></script>
+    <link href="/styles/col-12.css" rel="stylesheet">
+    <script src="/scripts/alert.js"></script>
     <script>
         var deptArray;
         var selectDept;
         var selectPos;
         var posArray;
         window.onload=function () {
+            var a= document.getElementById("alert");
+            hideAlert(a);
             selectDept=document.getElementById("dept_id");
             selectPos=document.getElementById("pos_id");
         }
@@ -29,8 +35,8 @@
 
                 success: function (data, textStatus) {
                     deptArray=data;
-                    console.log(data);
-                    console.log(textStatus);
+//                    console.log(data);
+//                    console.log(textStatus);
                     adddept();
                 }
             });
@@ -55,12 +61,34 @@
                 selectPos.options[i].text=posArray[i].positionTypeName;
             }
         }
-
     </script>
+    <style>
+        #alert {
+            position: absolute;
+            z-index: 1100;
+            width: 100%;
+        }
+        td {
+            text-align: center;
+            border: 1px solid #ff5b5f;
+        }
+        input {
+            border: 0px;
+        }
+        caption {
+            border: 1px solid #ff5b5f;
+        }
+    </style>
 </head>
 <body>
-<div id="alert" class="alert alert-success"></div>
-
+<jsp:include page="../admin/adminTop.jsp"></jsp:include>
+<div id="alert">
+    <c:if test="${info!=null}">
+        <div class="alert alert-danger">
+            <c:out value="${info}"></c:out>
+        </div>
+    </c:if>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-12" id="content">

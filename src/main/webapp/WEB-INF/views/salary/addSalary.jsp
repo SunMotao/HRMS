@@ -4,33 +4,35 @@
 <html>
 <head>
     <base href="<%= basePath%>">
-    <title>首页</title>
+    <title>AddSalary</title>
     <link href="/styles/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/jquery-3.3.1.min.js"></script>
+    <link href="/styles/sidebar.css" rel="stylesheet" type="text/css">
+    <script src="/scripts/prefixfree.min.js"></script>
+    <link href="/styles/col-12.css" rel="stylesheet">
     <script>
         var employeeId;
         function obtainEmployeeId(emplId) {
             employeeId=emplId;
-        }
-        function obtainAttenanceDays() {
-            $.ajax({
-                url:"attendance/queryAttendance.do",
+            $.getJSON({
+                url:"salary/queryEmployeeBaseSalary.do",
+                data:{"employeeId":employeeId},
+                success:function (data) {
+                    $("#bSalary").val(data.baseSalary);
+                    $("#fivePayment").val(-data.baseSalary*0.18);
+
+                }
             })
-
-
-
-            $("#attDays").val();
         }
-
 
     </script>
 
 
 </head>
 <body>
-
+<jsp:include page="../admin/adminTop.jsp"></jsp:include>
 <div class="container">
     <div class="row">
         <div class="col-md-12" id="content">
@@ -48,19 +50,19 @@
                         <td>出勤天数</td>
                         <td><input type="number" name="attendanceDays" id="attDays" onblur="obtainAttenanceDays()"></td>
                         <td>基本薪资</td>
-                        <td><input type="text" name="baseSalary"></td>
+                        <td><input type="text" name="baseSalary" id="bSalary"></td>
                     </tr>
                     <tr>
                         <td>五险一金</td>
-                        <td><input type="text" name="fiveInsurancePayment"></td>
+                        <td><input type="text" name="fiveInsurancePayment" id="fivePayment"></td>
                         <td>奖惩金额</td>
-                        <td><input type="text" name="rewardsMoney"></td>
+                        <td><input type="text" name="rewardsMoney" id="rMoney"></td>
                         <td>总薪资</td>
-                        <td><input type="text" name="totalSalary"></td>
+                        <td><input type="text" name="totalSalary" id="tSalary"></td>
                     </tr>
                     <tr>
                         <td>备注</td>
-                        <td colspan="5"><textarea rows="5" cols="80" name="salaryInfo"></textarea></td>
+                        <td colspan="5"><textarea rows="5" cols="80" name="salaryInfo" id="sInfo"></textarea></td>
                     </tr>
 
                     <tr>

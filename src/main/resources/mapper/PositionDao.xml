@@ -46,4 +46,7 @@
         SELECT * FROM position WHERE POSITION_NAME=#{positionName}
     </select>
 
+    <update id="deletePosition" parameterType="Position">
+        UPDATE POSITION SET POSITION_STATUS=1,POSITION_MODIFIED_TIME=#{positionModifiedTime} WHERE ID=#{id}
+    </update>
 </mapper>

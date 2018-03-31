@@ -4,35 +4,43 @@
 <html>
 <head>
     <base href="<%= basePath%>">
-    <title>首页</title>
+    <title>ApplyNewss</title>
     <link href="/styles/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/jquery-3.3.1.min.js"></script>
     <script src="/scripts/ajax.js"></script>
+    <link href="/styles/sidebar.css" rel="stylesheet" type="text/css">
+    <script src="/scripts/prefixfree.min.js"></script>
+    <link href="/styles/col-12.css" rel="stylesheet">
     <script>
-        var madata;
         function pass(applyId,visitorId) {
             var applyAddress=prompt("请输入面试地点","航天大厦");
             var applyDate=prompt("请输入面试时间","0");
             var applyInfo=prompt("请输入面试信息","0");
-            ajax("get","apply/applyPass.do",{"id":applyId,"visitorId":visitorId,
-                            "applyAddress":applyAddress,"applyDate":applyDate,"applyInfo":applyInfo},true,function (data,readyState,status) {
-                if(readyState==4&&status==200){
-                    madata=data;
+            $.ajax({
+                url:"apply/applyPass.do",
+                data:{"id":applyId,"visitorId":visitorId,
+                    "applyAddress":applyAddress,"applyDate":applyDate,"applyInfo":applyInfo},
+                success:function (data) {
+                    alert(data);
                 }
-            });
+            })
         }
+
         function waive(applyId,visitorId) {
-            ajax("get","apply/applyWaive.do",{"id":applyId,"visitorId":visitorId},true,function (data,readyState,status) {
-                if(readyState==4&&status==200){
-                    madata=data;
+            $.ajax({
+                url:"apply/applyWaive.do",
+                data:{"id":applyId,"visitorId":visitorId},
+                success:function (data) {
+                    alert(data);
                 }
-            });
+            })
         }
     </script>
 </head>
 <body>
+<jsp:include page="../admin/adminTop.jsp"></jsp:include>
 <div class="container">
     <div class="row">
         <div class="col-md-12" id="content">
@@ -50,7 +58,7 @@
                     <th>求职状态</th>
                     <th>添加时间</th>
                     <th>修改时间</th>
-                    <th>操作</th>
+                    <th colspan="2">操作</th>
                 </tr>
                 <c:forEach items="${applies}" var="apply">
                     <tr>
